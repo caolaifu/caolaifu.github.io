@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        window.location.href="http://shop62098975.taobao.com";
-    </script>
-</body>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <meta name="author" content="life">
+        <title>微信二次开发</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/jweixin-1.0.0.js"></script>
+        <!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+        <script src="js/base.js"></script>
+        <script src="js/share.js"></script>
+    </head>
+    <style>
+        button{
+            width: 220px;
+            height: 220px;
+            background-color: blue;
+            border: 1px solid red;
+        }
+        img{
+            width: 200px;
+        }
+    </style>
+    <body>
+        
+        <button>点击上传头像</button>
+        <img src="" alt="">
+    </body>
 </html>
+<script>
+      $('button').click(function(){
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                $('img').attr('src', localIds)
+            }
+        })
+    })
+</script>
