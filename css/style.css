@@ -123,6 +123,12 @@ button:hover {
     margin-left: auto;
 }
 
+.wrapper h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 3em;
+}
+
 @media (min-width: 576px) {
     .wrapper {
         max-width: 540px;
@@ -291,7 +297,7 @@ section.w3l-mockup-form::before {
     -moz-transition: 0.5s ease;
 }
 .copyright {
-    margin-top:4em;
+    margin-top:10em;
 }
 .copyright p {
     color: #fff;
